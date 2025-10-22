@@ -12,7 +12,7 @@ function DesignStyles() {
   const styles = [
     {
       title: "Contemporary",
-      img: getImage("/assets/contemporary.jpg"),
+      img: getImage("/assets/Contemporary.jpg"),
       desc: "Sleek lines, neutral colors, and a mix of materials for a modern feel. Ideal for open floor plans and minimalistic furniture arrangements."
     },
     {
@@ -27,7 +27,7 @@ function DesignStyles() {
     },
     {
       title: "Industrial",
-      img: getImage("/assets/industrial.jpg"),
+      img: getImage("/assets/Industrial.jpg"),
       desc: "Exposed materials, metal accents, and raw finishes for urban charm. High ceilings and open layouts complete the look."
     },
     {
@@ -42,17 +42,17 @@ function DesignStyles() {
     },
     {
       title: "Modern Farmhouse",
-      img: getImage("/assets/modern-farmhouse.webp"),
+      img: getImage("/assets/Modern-Farmhouse.webp"),
       desc: "Rustic charm meets modern elements. Natural wood, white walls, and cozy interiors for a welcoming home."
     },
     {
       title: "Luxury",
-      img: getImage("/assets/luxury.webp"),
+      img: getImage("/assets/Luxury.webp"),
       desc: "Premium materials, elegant lighting, and sophisticated furniture. Designed for a high-end, opulent living space."
     },
     {
       title: "Mediterranean",
-      img: getImage("/assets/mediterranean.jpg"),
+      img: getImage("/assets/Mediterranean.jpg"),
       desc: "Warm colors, arches, textured walls, and natural fabrics. Brings a sun-soaked, coastal vibe indoors."
     }
   ];
