@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Home-Styler/static/css/main.e13da00b.css",
+    "main.js": "/Home-Styler/static/js/main.baedd6bf.js",
+    "index.html": "/Home-Styler/index.html",
+    "main.e13da00b.css.map": "/Home-Styler/static/css/main.e13da00b.css.map",
+    "main.baedd6bf.js.map": "/Home-Styler/static/js/main.baedd6bf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e13da00b.css",
+    "static/js/main.baedd6bf.js"
+  ]
+}
