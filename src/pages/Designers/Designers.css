@@ -1,0 +1,160 @@
+.page.designers {
+  padding: 3rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  overflow-x: hidden;
+  background: #fafafa;
+}
+
+/* ---------- INTRO ---------- */
+.intro-section {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.headline {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  color: #009688;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.subtext {
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  color: #555;
+  line-height: 1.8;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* ---------- DESIGNER SHOWCASE ---------- */
+.designer-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.designer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.designer-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.designer-img-wrapper {
+  flex: 1 1 45%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.designer-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.designer-img-wrapper:hover img {
+  transform: scale(1.05);
+}
+
+.designer-details {
+  flex: 1 1 45%;
+  padding: 1rem;
+}
+
+.designer-details h2 {
+  font-size: clamp(1.8rem, 3vw, 2.2rem);
+  color: #009688;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.designer-details h4 {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.designer-details .quote {
+  font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+  color: #555;
+  font-style: italic;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+/* ---------- LINKED PRODUCTS PARAGRAPH ---------- */
+.linked-products {
+  font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+  color: #444;
+  line-height: 1.7;
+  background: #fff;
+  padding: 1rem 1.2rem;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .designer-row {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .designer-row.reverse {
+    flex-direction: column;
+  }
+
+  .designer-img-wrapper,
+  .designer-details {
+    flex: 1 1 100%;
+  }
+
+  .designer-img-wrapper img {
+    height: 350px;
+  }
+
+  .designer-details h2,
+  .designer-details h4,
+  .designer-details .quote,
+  .linked-products {
+    text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .page.designers {
+    padding: 2rem 1rem;
+  }
+
+  .headline {
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
+  }
+
+  .subtext {
+    font-size: 0.95rem;
+  }
+
+  .designer-img-wrapper img {
+    height: 280px;
+  }
+
+  .designer-details .quote {
+    font-size: 0.9rem;
+  }
+
+  .linked-products {
+    font-size: 0.9rem;
+    padding: 0.8rem 1rem;
+  }
+}

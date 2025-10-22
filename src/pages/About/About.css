@@ -1,0 +1,304 @@
+.page.about { 
+  font-family: "Poppins", sans-serif;
+  color: #222;
+  background: #f9fafb;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ---------- UNDERLINE EFFECT (hover only) ---------- */
+.page.about h1,
+.page.about h2,
+.page.about h3 {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: default;
+}
+
+.page.about h1::after,
+.page.about h2::after,
+.page.about h3::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background-color: #009688;
+  border-radius: 3px;
+  transition: width 0.3s ease-in-out, opacity 0.3s ease;
+  opacity: 0;
+}
+
+/* underline appears only when hovered */
+.page.about h1:hover::after,
+.page.about h2:hover::after,
+.page.about h3:hover::after {
+  width: 70%;
+  opacity: 1;
+}
+
+/* for left-aligned headings */
+.story-text h2::after {
+  left: 0;
+  transform: none;
+}
+
+.story-text h2:hover::after {
+  width: 80px;
+  opacity: 1;
+}
+
+/* ---------- HERO ---------- */
+.about-hero-modern {
+  background: linear-gradient(135deg, #f0fdfa, #ffffff);
+  position: relative;
+  padding: 7rem 1.5rem 5rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+}
+
+.about-hero-modern::before,
+.about-hero-modern::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+}
+
+.about-hero-modern::before {
+  top: -100px;
+  left: -150px;
+  width: 400px;
+  height: 400px;
+  background: rgba(0, 150, 136, 0.1);
+}
+
+.about-hero-modern::after {
+  bottom: -120px;
+  right: -150px;
+  width: 400px;
+  height: 400px;
+  background: rgba(0, 121, 107, 0.1);
+}
+
+.hero-text h1 {
+  color: #009688;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+}
+
+.hero-text p {
+  max-width: 750px;
+  margin: 0 auto;
+  color: #555;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+/* ---------- STORY ---------- */
+.about-story-modern {
+  max-width: 1200px;
+  margin: 5rem auto;
+  padding: 0 2rem;
+}
+
+.story-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.story-text h2 {
+  color: #009688;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.story-text p {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.story-image img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Row layout for large screens */
+@media (min-width: 900px) {
+  .story-content {
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .story-text,
+  .story-image {
+    flex: 1;
+  }
+}
+
+/* ---------- VALUES ---------- */
+.about-values-modern {
+  background: #ffffff;
+  text-align: center;
+  padding: 5rem 2rem;
+  position: relative;
+}
+
+.about-values-modern h2 {
+  color: #009688;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+
+/* 1 column mobile, 2 columns tablet+desktop */
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.value-card.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  padding: 2rem 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-card.glass:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.value-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 1.2rem;
+}
+
+.value-card h3 {
+  color: #009688;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.value-card p {
+  color: #555;
+  font-size: 1rem;
+}
+
+/* ---------- TEAM ---------- */
+.about-team-modern {
+  padding: 5rem 1.5rem;
+  background: #f9fafb;
+  text-align: center;
+}
+
+.about-team-modern h2 {
+  color: #009688;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.team-subtext {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 3rem;
+}
+
+.team-grid {
+  display: grid;
+  gap: 2rem;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-card-modern {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 340px;
+}
+
+.team-card-modern:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.team-card-modern img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.team-info {
+  padding: 1.5rem;
+}
+
+.team-info h3 {
+  color: #009688;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.team-info p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* Responsive Team Grid */
+@media (max-width: 599px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1023px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .team-grid .team-card-modern:nth-child(4),
+  .team-grid .team-card-modern:nth-child(5) {
+    justify-self: center;
+  }
+}

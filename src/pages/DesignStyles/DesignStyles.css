@@ -1,0 +1,149 @@
+.page.design-styles {
+  padding: 3rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+.hero-section {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.headline {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #009688;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.headline::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #009688;
+  margin-top: 6px;
+  transition: width 0.3s ease;
+}
+
+.headline:hover::after {
+  width: 100%;
+}
+
+.subtext {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: #555;
+  line-height: 1.7;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* ---------- STYLE CARDS ---------- */
+.styles-grid {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: repeat(3, 1fr); /* default 3 cards for large screens */
+}
+
+.style-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.style-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.style-card:hover img {
+  transform: scale(1.05);
+}
+
+.style-info {
+  padding: 1.5rem 1rem;
+  flex-grow: 1;
+}
+
+.style-info h3 {
+  color: #009688;
+  font-size: clamp(1.2rem, 2vw, 1.4rem);
+  margin-bottom: 0.8rem;
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.style-info h3::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #009688;
+  margin-top: 4px;
+  transition: width 0.3s ease;
+}
+
+.style-info h3:hover::after {
+  width: 100%;
+}
+
+.style-info p {
+  color: #555;
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
+  line-height: 1.5;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .styles-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row for medium screens */
+  }
+
+  .style-card img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 500px) {
+  .styles-grid {
+    grid-template-columns: 1fr; /* 1 card per row for mobile */
+  }
+
+  .style-card img {
+    height: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page.design-styles {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .headline {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .subtext {
+    font-size: 0.9rem;
+  }
+
+  .style-info h3 {
+    font-size: clamp(1rem, 4vw, 1.1rem);
+  }
+
+  .style-info p {
+    font-size: 0.85rem;
+  }
+}

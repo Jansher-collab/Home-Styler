@@ -1,0 +1,435 @@
+/* ---------- BASE ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.home {
+  width: 100%;
+  background: #fafafa;
+  color: #222;
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.home-container {
+  width: min(90%, 1200px);
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.hero-text {
+  animation: fadeInUp 0.7s ease forwards;
+}
+
+.headline {
+  position: relative;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.headline span {
+  color: #009688;
+}
+
+.headline:hover {
+  color: #00796b;
+}
+
+.headline::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background: #009688;
+  margin-top: 4px;
+  transition: width 0.3s ease;
+}
+
+.headline:hover::after {
+  width: 100%;
+}
+
+.subtext {
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.9rem 1.6rem;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none; /* removed underline */
+}
+
+.btn.primary {
+  background: #009688;
+  color: #fff;
+  border: none;
+}
+
+.btn.primary:hover {
+  background: #00796b;
+  transform: translateY(-2px);
+}
+
+.btn.outline {
+  border: 2px solid #009688;
+  background: transparent;
+  color: #009688;
+}
+
+.btn.outline:hover {
+  background: #009688;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ---------- HERO IMAGE ---------- */
+.hero-image {
+  text-align: center;
+}
+
+.hero-img {
+  width: 100%;
+  max-width: 540px;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease, box-shadow 0.4s ease;
+  display: block;
+  margin: 0 auto;
+}
+
+.hero-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* ---------- HIGHLIGHTS ---------- */
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+
+.highlight-card {
+  background: #fff;
+  border-radius: 40px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 200px;
+}
+
+.highlight-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-card h3 {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #009688;
+  margin-bottom: 0.8rem;
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.highlight-card h3:hover {
+  color: #00796b;
+  transform: translateY(-2px);
+}
+
+.highlight-card p {
+  color: #555;
+  line-height: 1.6;
+  font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+  flex-grow: 1;
+}
+
+/* ---------- TRENDING DESIGNS ---------- */
+.trending {
+  margin-bottom: 5rem;
+}
+
+.section-title {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #222;
+  position: relative;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.section-title:hover {
+  color: #009688;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 0;
+  background: #009688;
+  margin: 6px auto 0;
+  transition: width 0.35s ease;
+}
+
+.section-title:hover::after {
+  width: 50%;
+}
+
+.design-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+.design-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+}
+
+.design-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.design-card:hover img {
+  transform: scale(1.05);
+}
+
+.design-info {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-grow: 1;
+}
+
+.design-info h4 {
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  color: #009688;
+  margin-bottom: 0.5rem;
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.design-info h4:hover {
+  color: #00796b;
+  transform: translateY(-2px);
+}
+
+.design-info p {
+  color: #555;
+  font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+/* ---------- CTA ---------- */
+.cta {
+  text-align: center;
+  background: linear-gradient(135deg, #009688, #00bfa5);
+  color: #fff;
+  border-radius: 18px;
+  padding: 3rem 2rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cta h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  margin-bottom: 1rem;
+}
+
+.cta p {
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+.cta .btn {
+  background: #fff;
+  color: #009688;
+  font-weight: 600;
+  text-decoration: none; /* remove underline */
+}
+
+.cta .btn:hover {
+  background: #00796b;
+  color: #fff;
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-img {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .home {
+    padding: 2.5rem 1rem;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .hero-img {
+    max-width: 90%;
+  }
+
+  .highlight-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .design-card img {
+    height: 180px;
+  }
+
+  .cta {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .headline {
+    font-size: clamp(1.4rem, 6vw, 2rem);
+  }
+
+  .subtext {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: clamp(1.2rem, 5vw, 1.5rem);
+  }
+
+  .highlight-card h3,
+  .design-info h4 {
+    font-size: clamp(0.85rem, 2.5vw, 1rem);
+  }
+
+  .design-card img {
+    height: 160px;
+  }
+}
+
+/* ---------- CARD TITLE UNDERLINE ON HOVER (TEXT ONLY) ---------- */
+.highlight-card h3,
+.design-info h4 {
+  position: relative;
+  display: inline-block; /* underline width matches text only */
+  cursor: pointer;
+  color: #009688;
+  transition: color 0.3s ease;
+}
+
+.highlight-card h3::after,
+.design-info h4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;      /* a little below text */
+  height: 2px;
+  width: 0;           /* start hidden */
+  background-color: #009688;
+  transition: width 0.3s ease;
+}
+
+.highlight-card h3:hover,
+.design-info h4:hover {
+  color: #00796b;
+}
+
+.highlight-card h3:hover::after,
+.design-info h4:hover::after {
+  width: 100%;        /* expands only under the text */
+}
+/* CTA Heading underline effect */
+.cta h2 {
+  position: relative;
+  display: inline-block; /* width = text only */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.cta h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;        /* right under the text */
+  height: 3px;
+  width: 0;          /* start hidden */
+  background-color: #fff; /* matches CTA text color */
+  transition: width 0.3s ease;
+}
+
+.cta h2:hover::after {
+  width: 100%;       /* exactly text width */
+}
+
+
