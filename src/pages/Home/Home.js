@@ -1,10 +1,11 @@
-
-// Import React and other dependencies
 import { useEffect } from "react";
-import "./Home.css"; // your CSS
-import { Link } from "react-router-dom"; // if needed
+import "./Home.css";
+import { Link } from "react-router-dom";
 
 function Home() {
+  // ✅ Helper function for GitHub Pages–safe image paths
+  const getImage = (path) => `${process.env.PUBLIC_URL}${path}`;
+
   // ✅ Scroll to top when this page loads
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -13,8 +14,7 @@ function Home() {
   return (
     <section className="home">
       <div className="home-container">
-        {/* Your page content here */}
-         {/* ---------- HERO ---------- */}
+        {/* ---------- HERO ---------- */}
         <div className="hero fade-in">
           <div className="hero-text">
             <h1 className="headline">
@@ -27,14 +27,15 @@ function Home() {
               reflects your lifestyle.
             </p>
             <div className="buttons">
-              {/* ✅ Correct route path with hyphen */}
               <Link to="/design-styles" className="btn primary">Explore Designs</Link>
               <Link to="/designers" className="btn outline">Book a Designer</Link>
             </div>
           </div>
+
+          {/* ✅ Fixed hero image path */}
           <div className="hero-image">
             <img
-              src="/assets/Modern-living-room.jpg"
+              src={getImage("/assets/Modern-living-room.jpg")}
               alt="Modern Living Room"
               className="hero-img"
               loading="lazy"
@@ -63,21 +64,35 @@ function Home() {
           <h2 className="section-title fade-in">Trending Interior Themes</h2>
           <div className="design-grid">
             <div className="design-card fade-in">
-              <img src="/assets/bedroom.jpg" alt="Scandinavian Bedroom" loading="lazy" />
+              <img
+                src={getImage("/assets/bedroom.jpg")}
+                alt="Scandinavian Bedroom"
+                loading="lazy"
+              />
               <div className="design-info">
                 <h4>Scandinavian Calm</h4>
                 <p>Muted tones, wood finishes, and cozy textiles for timeless warmth.</p>
               </div>
             </div>
+
             <div className="design-card fade-in">
-              <img src="/assets/Modern-Kitchen.jpg" alt="Modern Kitchen" loading="lazy" />
+              <img
+                src={getImage("/assets/Modern-Kitchen.jpg")}
+                alt="Modern Kitchen"
+                loading="lazy"
+              />
               <div className="design-info">
                 <h4>Modern Minimal Kitchen</h4>
                 <p>Sleek cabinetry and smart lighting for clutter-free cooking space.</p>
               </div>
             </div>
+
             <div className="design-card fade-in">
-              <img src="/assets/Home-Office.webp" alt="Home Office" loading="lazy" />
+              <img
+                src={getImage("/assets/Home-Office.webp")}
+                alt="Home Office"
+                loading="lazy"
+              />
               <div className="design-info">
                 <h4>Home Office Zen</h4>
                 <p>Ergonomic setups fused with aesthetics to boost productivity.</p>

@@ -6,10 +6,13 @@ function Designers() {
     window.scrollTo(0, 0);
   }, []);
 
+  // ✅ Helper to correctly resolve image URLs for GitHub Pages
+  const getImage = (path) => `${process.env.PUBLIC_URL}${path}`;
+
   const designers = [
     {
       name: "Ava Thompson",
-      image: "/assets/designer1.jpg",
+      image: getImage("/assets/designer1.jpg"),
       specialty: "Modern & Minimalist Interiors",
       quote: "“Design is where simplicity meets soul.”",
       products:
@@ -17,7 +20,7 @@ function Designers() {
     },
     {
       name: "Liam Carter",
-      image: "/assets/designer2.jpg",
+      image: getImage("/assets/designer2.jpg"),
       specialty: "Luxury & Contemporary Spaces",
       quote: "“Elegance lies in the details — not in excess.”",
       products:
@@ -25,7 +28,7 @@ function Designers() {
     },
     {
       name: "Sophia Martinez",
-      image: "/assets/designer3.jpg",
+      image: getImage("/assets/designer3.jpg"),
       specialty: "Bohemian & Eclectic Styles",
       quote: "“Every room should feel like a story unfolding.”",
       products:
@@ -33,7 +36,7 @@ function Designers() {
     },
     {
       name: "Noah Patel",
-      image: "/assets/designer4.jpg",
+      image: getImage("/assets/designer4.jpg"),
       specialty: "Industrial & Urban Aesthetics",
       quote: "“Raw materials, refined experiences.”",
       products:
@@ -41,7 +44,7 @@ function Designers() {
     },
     {
       name: "Emma Wilson",
-      image: "/assets/designer5.jpg",
+      image: getImage("/assets/designer5.jpg"),
       specialty: "Classic & Timeless Spaces",
       quote: "“Tradition meets modern harmony.”",
       products:

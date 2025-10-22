@@ -35,7 +35,7 @@ function Navbar() {
     <nav className="navbar">
       {/* Logo + Title */}
       <div className="logo-container">
-        <img src="/assets/logo.png" alt="HomeStyler Logo" className="logo-img" />
+        <img src={`${process.env.PUBLIC_URL}/assets/logo.png`} alt="HomeStyler Logo" className="logo-img" />
         <h2 className="logo-text">HomeStyler</h2>
       </div>
 

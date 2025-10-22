@@ -9,7 +9,7 @@ function Footer() {
         {/* ---------- COLUMN 1: BRAND ---------- */}
         <div className="footer-col brand">
           <div className="footer-logo-container">
-            <img src="/assets/logo.png" alt="HomeStyler Logo" className="footer-logo-img" />
+            <img src={`${process.env.PUBLIC_URL}/assets/logo.png`} alt="HomeStyler Logo" className="footer-logo-img" />
             <h2 className="footer-logo-text">HomeStyler</h2>
           </div>
           <p className="footer-desc">

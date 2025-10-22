@@ -5,6 +5,9 @@ import "./Feedback.css";
 function Feedback() {
   const navigate = useNavigate();
 
+  // ✅ Helper function for correct image path on GitHub Pages
+  const getImage = (path) => `${process.env.PUBLIC_URL}${path}`;
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -69,18 +72,22 @@ function Feedback() {
             Share Feedback
           </button>
         </div>
+
+        {/* ✅ Fixed image path for GitHub Pages */}
         <div className="hero-illustration">
           <img
-            src="/assets/feedback-illustration.webp"
+            src={getImage("/assets/feedback-illustration.webp")}
             alt="Feedback Illustration"
+            loading="lazy"
           />
         </div>
+
         <div className="hero-shape shape1"></div>
         <div className="hero-shape shape2"></div>
         <div className="hero-shape shape3"></div>
       </section>
 
-      {/* ---------- REST OF THE PAGE (unchanged) ---------- */}
+      {/* ---------- FEEDBACK FORM ---------- */}
       <section className="feedback-section fade-in">
         <h2>Share Your Thoughts</h2>
         <p className="section-subtext">
@@ -131,7 +138,7 @@ function Feedback() {
 
           {success && (
             <p className="success-text">
-               Thank you for your feedback! Redirecting to Home...
+              Thank you for your feedback! Redirecting to Home...
             </p>
           )}
         </form>

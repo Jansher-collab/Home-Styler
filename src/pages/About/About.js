@@ -6,30 +6,33 @@ function About() {
     window.scrollTo(0, 0);
   }, []);
 
+  // ✅ Helper for consistent image path resolution
+  const getImage = (path) => `${process.env.PUBLIC_URL}${path}`;
+
   const designers = [
     {
       name: "Ava Thompson",
-      image: "/assets/designer1.jpg",
+      image: getImage("/assets/designer1.jpg"),
       specialty: "Modern & Minimalist Interiors",
     },
     {
       name: "Liam Carter",
-      image: "/assets/designer2.jpg",
+      image: getImage("/assets/designer2.jpg"),
       specialty: "Luxury & Contemporary Spaces",
     },
     {
       name: "Sophia Martinez",
-      image: "/assets/designer3.jpg",
+      image: getImage("/assets/designer3.jpg"),
       specialty: "Bohemian & Eclectic Styles",
     },
     {
       name: "Noah Patel",
-      image: "/assets/designer4.jpg",
+      image: getImage("/assets/designer4.jpg"),
       specialty: "Industrial & Urban Aesthetics",
     },
     {
       name: "Emma Wilson",
-      image: "/assets/designer5.jpg",
+      image: getImage("/assets/designer5.jpg"),
       specialty: "Classic & Timeless Spaces",
     },
   ];
@@ -67,7 +70,11 @@ function About() {
             </p>
           </div>
           <div className="story-image">
-            <img src="/assets/about-journey.jpg" alt="Our Journey" loading="lazy" />
+            <img
+              src={getImage("/assets/about-journey.jpg")}
+              alt="Our Journey"
+              loading="lazy"
+            />
           </div>
         </div>
       </section>
@@ -77,22 +84,25 @@ function About() {
         <h2>Our Core Values</h2>
         <div className="values-grid">
           <div className="value-card glass">
-            <img src="/assets/creativity.jpg" alt="Creativity" />
+            <img src={getImage("/assets/creativity.jpg")} alt="Creativity" />
             <h3>Creativity</h3>
             <p>Transforming imagination into meaningful spaces.</p>
           </div>
           <div className="value-card glass">
-            <img src="/assets/innovation.jpg" alt="Innovation" />
+            <img src={getImage("/assets/innovation.jpg")} alt="Innovation" />
             <h3>Innovation</h3>
             <p>Using cutting-edge tools to reimagine design experiences.</p>
           </div>
           <div className="value-card glass">
-            <img src="/assets/quality.jpg" alt="Quality" />
+            <img src={getImage("/assets/quality.jpg")} alt="Quality" />
             <h3>Quality</h3>
             <p>Every detail crafted with precision and excellence.</p>
           </div>
           <div className="value-card glass">
-            <img src="/assets/sustainability.jpg" alt="Sustainability" />
+            <img
+              src={getImage("/assets/sustainability.jpg")}
+              alt="Sustainability"
+            />
             <h3>Sustainability</h3>
             <p>Designing responsibly for a better tomorrow.</p>
           </div>

@@ -6,50 +6,53 @@ function DesignStyles() {
     window.scrollTo(0, 0);
   }, []);
 
+  // ✅ Fix image path for GitHub Pages deployment
+  const getImage = (path) => `${process.env.PUBLIC_URL}${path}`;
+
   const styles = [
     {
       title: "Contemporary",
-      img: "/assets/contemporary.jpg",
+      img: getImage("/assets/contemporary.jpg"),
       desc: "Sleek lines, neutral colors, and a mix of materials for a modern feel. Ideal for open floor plans and minimalistic furniture arrangements."
     },
     {
       title: "Minimal",
-      img: "/assets/Minimal.jpeg",
+      img: getImage("/assets/Minimal.jpeg"),
       desc: "Less is more. Open spaces, clean lines, and functional design, focusing on essential elements and a clutter-free environment."
     },
     {
       title: "Classic",
-      img: "/assets/classic.jpg",
+      img: getImage("/assets/classic.jpg"),
       desc: "Timeless elegance with rich textures, traditional furniture, symmetry, and refined detailing. Perfect for a warm and inviting home."
     },
     {
       title: "Industrial",
-      img: "/assets/industrial.jpg",
+      img: getImage("/assets/industrial.jpg"),
       desc: "Exposed materials, metal accents, and raw finishes for urban charm. High ceilings and open layouts complete the look."
     },
     {
       title: "Scandinavian",
-      img: "/assets/Scandinavian.webp",
+      img: getImage("/assets/Scandinavian.webp"),
       desc: "Light tones, natural materials, functional furniture, and cozy textiles. Blends simplicity and warmth seamlessly."
     },
     {
       title: "Bohemian",
-      img: "/assets/Bohemian.webp",
+      img: getImage("/assets/Bohemian.webp"),
       desc: "Eclectic mix, vibrant colors, artistic decor, and layered textures. A free-spirited approach to interior styling."
     },
     {
       title: "Modern Farmhouse",
-      img: "/assets/modern-farmhouse.webp",
+      img: getImage("/assets/modern-farmhouse.webp"),
       desc: "Rustic charm meets modern elements. Natural wood, white walls, and cozy interiors for a welcoming home."
     },
     {
       title: "Luxury",
-      img: "/assets/luxury.webp",
+      img: getImage("/assets/luxury.webp"),
       desc: "Premium materials, elegant lighting, and sophisticated furniture. Designed for a high-end, opulent living space."
     },
     {
       title: "Mediterranean",
-      img: "/assets/mediterranean.jpg",
+      img: getImage("/assets/mediterranean.jpg"),
       desc: "Warm colors, arches, textured walls, and natural fabrics. Brings a sun-soaked, coastal vibe indoors."
     }
   ];
